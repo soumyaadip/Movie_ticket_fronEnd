@@ -1,118 +1,134 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import FirstPage from './Src/Component/FirstPage'
+import SecondPage from './Src/Component/SecondPage'
+import ThirdPage from './Src/Component/ThirdPage'
+import Login from './Src/Component/Login'
+import SignUp from './Src/Component/SignUp'
+import Profile from './Src/Component/Profile'
+import Splash from './Src/Component/Splash'
+import Home from './Src/Component/Home'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Notification from './Src/Component/Notification'
+import ShowClick from './Src/Component/ShowClick'
+import BookTicket from './Src/Component/BookTicket'
+import ForgotPass1 from './Src/Component/ForgotPass1'
+import ForgotPass2 from './Src/Component/ForgotPass2'
+import ForgotPass3 from './Src/Component/ForgotPass3'
+import ForgotPass4 from './Src/Component/ForgotPass4'
+import ChooseSeat from './Src/Component/ChooseSeat'
+import Cart from './Src/Component/Cart'
+import AddCard from './Src/Component/AddCard'
+import PaymentMethod from './Src/Component/PaymentMethod'
+import ProfileEdit from './Src/Component/ProfileEdit'
+import Ticket from './Src/Component/Ticket'
+import Checkout from './Src/Component/Checkout'
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+export default function App() {
+  const Stack = createNativeStackNavigator();
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+      // <Splash></Splash>
+      // <FirstPage></FirstPage>
+      // <SecondPage></SecondPage>
+      //  <ThirdPage></ThirdPage> 
+      // <Login></Login>
+      // <SignUp></SignUp>
+      // <Profile></Profile>
+      // <Home></Home>
+      // <Notification></Notification>
+      // <ShowClick></ShowClick>
+      // <BookTicket></BookTicket>
+      // <ForgotPass1></ForgotPass1>
+      //  <ForgotPass2></ForgotPass2>
+      // <ForgotPass3></ForgotPass3>
+      // <ForgotPass4></ForgotPass4>
+      // <ChooseSeat></ChooseSeat>
+      // <Checkout></Checkout>
+      // <Ticket></Ticket>
+      // <ProfileEdit></ProfileEdit>
+      // <PaymentMethod></PaymentMethod>
+      // <AddCard></AddCard>
+      // <Cart></Cart>
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
+    <NavigationContainer>
+    <Stack.Navigator initialRouteName="Splash" screenOptions={{ headerShown: false }}>
+    <Stack.Screen name="Splash" component={Splash} options={{
+         headerShown:false
+       }} />
+     <Stack.Screen name="FirstPage" component={FirstPage} options={{
+         headerShown:false
+       }} />
+       <Stack.Screen name="SecondPage" component={SecondPage} options={{
+         headerShown:false
+       }} />
+     <Stack.Screen name="ThirdPage" component={ThirdPage} options={{
+         headerShown:false
+       }} />
+     <Stack.Screen name="Login" component={Login}  options={{
+         headerShown:false
+       }}/>
+     <Stack.Screen name="SignUp" component={SignUp} options={{
+         headerShown:false
+       }} />
+     <Stack.Screen name="Home" component={Home}  options={{
+         headerShown:false
+       }}/>
+            <Stack.Screen name="ForgotPass1" component={ForgotPass1}  options={{
+         headerShown:false
+       }}/>
+            <Stack.Screen name="ForgotPass2" component={ForgotPass2}  options={{
+         headerShown:false
+       }}/>
+            <Stack.Screen name="ForgotPass3" component={ForgotPass3}  options={{
+         headerShown:false
+       }}/>
+            <Stack.Screen name="ForgotPass4" component={ForgotPass4}  options={{
+         headerShown:false
+       }}/>
+            <Stack.Screen name="Notification" component={Notification}  options={{
+         headerShown:false
+       }}/>
+            <Stack.Screen name="Ticket" component={Ticket}  options={{
+         headerShown:false
+       }}/>
+            <Stack.Screen name="ShowClick" component={ShowClick}  options={{
+         headerShown:false
+       }}/>
+            <Stack.Screen name="ProfileEdit" component={ProfileEdit}  options={{
+         headerShown:false
+       }}/>
+            <Stack.Screen name="Profile" component={Profile}  options={{
+         headerShown:false
+       }}/>
+            <Stack.Screen name="PaymentMethod" component={PaymentMethod}  options={{
+         headerShown:false
+       }}/>
+          <Stack.Screen name="ChooseSeat" component={ChooseSeat}  options={{
+         headerShown:false
+       }}/>
+          <Stack.Screen name="CheckOut" component={Checkout}  options={{
+         headerShown:false
+       }}/>
+          <Stack.Screen name="Cart" component={Cart}  options={{
+         headerShown:false
+       }}/>
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+<Stack.Screen name="BookTicket" component={BookTicket}  options={{
+         headerShown:false
+       }}/>
+                 <Stack.Screen name="AddCard" component={AddCard}  options={{
+         headerShown:false
+       }}/>
+   </Stack.Navigator>
+ </NavigationContainer>
+   
+    
+ 
+    
+  )
+};
 
-export default App;
+const styles = StyleSheet.create({})
